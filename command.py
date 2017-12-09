@@ -24,7 +24,7 @@ class Command(object):
 		if command in self.commands:
 			response += self.commands[command](query)
 		else:
-			response += "Sorry I don't understand the command: " + command + ". " + self.help()
+			response += "Sorry I don't understand the command: " + command + ". " + self.help("dummy")
 		
 		return response
 		
@@ -34,11 +34,11 @@ class Command(object):
 		blob.sentiment.polarity
 		resp = "Sentiment score is: " + str(blob.sentiment.polarity)
 		return resp
-		#return "Kris Kross will make you jump jump"
+		
 
 	def jump(self,query):
 		return query
-		#return "Kris Kross will make you jump jump"
+		
 	
 	def help(self,query):
 		response = "Currently I support the following commands:\r\n"
